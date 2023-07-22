@@ -38,7 +38,7 @@ resource "aws_lb" "my-lb" {
 
 
   tags = {
-  Name = "capstone-lb" }
+  Name = "capstone-lb" 
 }
 
 # Create Target group
@@ -51,7 +51,7 @@ resource "aws_lb_target_group" "target-grp" {
   vpc_id     = aws_vpc.demoVPC.id
   health_check {
     interval            = 70
-    path                = "/index.html"
+    path                = "index.html"
     port                = 80
     healthy_threshold   = 2
     unhealthy_threshold = 2
@@ -69,3 +69,4 @@ resource "aws_lb_listener" "front_end" {
     type             = "forward"
     target_group_arn = aws_lb_target_group.target-grp.arn
   }
+}
