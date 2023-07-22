@@ -57,3 +57,4 @@ resource "aws_s3_object" "my_s3_object" {
 resource "aws_s3_bucket_policy" "bucket_access_allow" {
   bucket = aws_s3_bucket.mynewbucket.id
   policy = file("policy.json")
+}
