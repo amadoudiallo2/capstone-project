@@ -42,3 +42,4 @@ resource "aws_route_table_association" "pri_sub2_to_natgw1" {
   count          = "1"
   route_table_id = aws_route_table.prv_sub2_rt[count.index].id
   subnet_id      = aws_subnet.private_subnet3.id
+}
