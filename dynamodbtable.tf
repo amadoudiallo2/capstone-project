@@ -13,4 +13,4 @@ resource "aws_dynamodb_table" "my_dynamo_table" {
 
 output "dynamo_arn" {
   value = aws_dynamodb_table.my_dynamo_table.arn
-}ade:~/environment/capstone-project/firstone (main) $ 
+}
