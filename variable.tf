@@ -44,3 +44,4 @@ variable "availability_zone_3" {
 
 variable "bucketName" {
   default = "my-static-s3-bucket-003"
+}
