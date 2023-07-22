@@ -50,7 +50,8 @@ resource "aws_s3_bucket_website_configuration" "thes3bucketconfig" {
 resource "aws_s3_object" "my_s3_object" {
   key    = "index.html"
   bucket = aws_s3_bucket.mynewbucket.id
-  source = "static/index.html"
+  source = "index.html"
+  etag   = filemd5("index.html")
 }
 
 resource "aws_s3_bucket_policy" "bucket_access_allow" {
