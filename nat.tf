@@ -23,3 +23,4 @@ resource "aws_nat_gateway" "nat_gateway_2" {
   count         = "1"
   allocation_id = aws_eip.eip_gtw_2[count.index].id
   subnet_id     = aws_subnet.private_subnet3.id
+}
