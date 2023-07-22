@@ -39,8 +39,8 @@ resource "aws_lb" "my-lb" {
 
   tags = {
   Name = "capstone-lb" 
+  }
 }
-
 # Create Target group
 
 resource "aws_lb_target_group" "target-grp" {
