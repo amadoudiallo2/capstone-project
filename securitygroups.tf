@@ -60,3 +60,4 @@ resource "aws_network_acl" "mainProject" {
   tags = {
     Name = "mainProject"
   }
+}
