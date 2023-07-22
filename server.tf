@@ -13,7 +13,7 @@ resource "aws_launch_configuration" "capstone-server" {
 
   ebs_block_device {
     device_name = "/dev/sdf"
-    volume_type = "gp2"tou
+    volume_type = "gp2"
     volume_size = 5
     encrypted   = true
   }
