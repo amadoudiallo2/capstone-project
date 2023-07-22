@@ -51,10 +51,9 @@ resource "aws_s3_object" "my_s3_object" {
   key    = "index.html"
   bucket = aws_s3_bucket.mynewbucket.id
   source = "static/index.html"
-  etag   = filemd5("static/index.html")
 }
 
 resource "aws_s3_bucket_policy" "bucket_access_allow" {
   bucket = aws_s3_bucket.mynewbucket.id
-  policy = file("policy.json")
+  policy = "policy.json"
 }
