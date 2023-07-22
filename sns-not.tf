@@ -11,9 +11,9 @@ resource "aws_lambda_function" "example_lambda" {
   runtime = "nodejs14.x" # Change this to your desired runtime (e.g., "python3.8")
 
   # Additional configuration (optional)
-  memory_size    = 128
-  timeout        = 10
-  publish        = true
+  memory_size = 128
+  timeout     = 10
+  publish     = true
 
   # Define the event source mapping for SNS trigger
 }
