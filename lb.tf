@@ -70,3 +70,19 @@ resource "aws_lb_listener" "front_end" {
     target_group_arn = aws_lb_target_group.target-grp.arn
   }
 }
+
+resource "aws_route53_zone" "my_main_zone" {
+  name = "mytrixlab.com" # Replace this with your domain name
+}
+
+resource "aws_route53_record" "example_dns" {
+  zone_id = aws_route53_zone.my_main_zone.zone_id
+  name    = "mytrixlab.com" # Replace this with your subdomain or root domain
+  type    = "A"
+
+  alias {
+    name                   = aws_lb.my-lb.dns_name
+    zone_id                = aws_lb.my-lb.zone_id
+    evaluate_target_health = true
+  }
+}

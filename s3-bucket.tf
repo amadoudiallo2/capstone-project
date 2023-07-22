@@ -57,14 +57,17 @@ resource "aws_s3_object" "my_s3_object" {
 resource "aws_s3_bucket_policy" "bucket_access_allow" {
   bucket = aws_s3_bucket.mynewbucket.id
   policy = data.aws_iam_policy_document.access_from_others.json
+
 }
 
 data "aws_iam_policy_document" "access_from_others" {
   statement {
+    effect = "Allow"
     principals {
       type        = "AWS"
-      identifiers = ["123456789012"]
+      identifiers = ["467283722999"]
     }
+
 
     actions = [
       "s3:GetObject",
