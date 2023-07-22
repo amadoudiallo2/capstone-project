@@ -17,3 +17,4 @@ resource "aws_launch_configuration" "capstone-server" {
     volume_size = 5
     encrypted   = true
   }
+}
