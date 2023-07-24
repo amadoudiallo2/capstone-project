@@ -6,15 +6,15 @@ variable "public-sn-1-cidr_block" {
   default = "10.0.1.0/24"
 }
 
-variable "private-sn-2-cidr_block" {
+variable "public-sn-2-cidr_block" {
   default = "10.0.2.0/24"
 }
 
-variable "private-sn-3-cidr_block" {
+variable "private-sn-1-cidr_block" {
   default = "10.0.3.0/24"
 }
 
-variable "private-sn-4-cidr_block" {
+variable "private-sn-2-cidr_block" {
   default = "10.0.4.0/24"
 }
 
@@ -23,7 +23,7 @@ variable "instance_type" {
 }
 
 variable "ami_value" {
-  default = "ami-06b09bfacae1453cb"
+  default = "ami-0bce92bf72335dbfa"
 }
 
 variable "key-name" {
@@ -36,10 +36,6 @@ variable "availability_zone_1" {
 
 variable "availability_zone_2" {
   default = "us-east-1b"
-}
-
-variable "availability_zone_3" {
-  default = "us-east-1c"
 }
 
 variable "bucketName" {

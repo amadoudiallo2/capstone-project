@@ -18,7 +18,7 @@ resource "aws_route_table" "prv_sub1_rt" {
 resource "aws_route_table_association" "pri_sub1_to_natgw1" {
   count          = "1"
   route_table_id = aws_route_table.prv_sub1_rt[count.index].id
-  subnet_id      = aws_subnet.private_subnet2.id
+  subnet_id      = aws_subnet.private_subnet1.id
 }
 
 # Create private route table for prv sub2
@@ -41,5 +41,5 @@ resource "aws_route_table" "prv_sub2_rt" {
 resource "aws_route_table_association" "pri_sub2_to_natgw1" {
   count          = "1"
   route_table_id = aws_route_table.prv_sub2_rt[count.index].id
-  subnet_id      = aws_subnet.private_subnet3.id
+  subnet_id      = aws_subnet.private_subnet2.id
 }

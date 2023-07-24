@@ -70,8 +70,7 @@ data "aws_iam_policy_document" "access_from_others" {
 
 
     actions = [
-      "s3:GetObject",
-      "s3:ListBucket",
+      "s3:GetObject"
     ]
 
     resources = [

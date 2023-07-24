@@ -16,7 +16,27 @@ resource "aws_subnet" "public_subnet1" {
   availability_zone = var.availability_zone_1
 
   tags = {
-    Name = "CapstonePublicSubnet"
+    Name = "CapstonePublicSubnet1"
+  }
+}
+
+resource "aws_subnet" "public_subnet2" {
+  vpc_id            = aws_vpc.demoVPC.id
+  cidr_block        = var.public-sn-2-cidr_block
+  availability_zone = var.availability_zone_2
+
+  tags = {
+    Name = "CapstonePublicSubnet2"
+  }
+}
+
+resource "aws_subnet" "private_subnet1" {
+  vpc_id            = aws_vpc.demoVPC.id
+  cidr_block        = var.private-sn-1-cidr_block
+  availability_zone = var.availability_zone_1
+
+  tags = {
+    Name = "CapstonePrivateSubnet1"
   }
 }
 
@@ -26,27 +46,7 @@ resource "aws_subnet" "private_subnet2" {
   availability_zone = var.availability_zone_2
 
   tags = {
-    Name = "CapstonePrivateSubnet1"
-  }
-}
-
-resource "aws_subnet" "private_subnet3" {
-  vpc_id            = aws_vpc.demoVPC.id
-  cidr_block        = var.private-sn-3-cidr_block
-  availability_zone = var.availability_zone_2
-
-  tags = {
     Name = "CapstonePrivateSubnet2"
-  }
-}
-
-resource "aws_subnet" "private_subnet4" {
-  vpc_id            = aws_vpc.demoVPC.id
-  cidr_block        = var.private-sn-4-cidr_block
-  availability_zone = var.availability_zone_3
-
-  tags = {
-    Name = "CapstonePrivateSubnet3"
   }
 }
 
