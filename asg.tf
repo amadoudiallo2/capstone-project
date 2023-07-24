@@ -9,7 +9,11 @@ resource "aws_autoscaling_group" "my_asg" {
   target_group_arns    = ["${aws_lb_target_group.target-grp.arn}"]
   health_check_type    = "EC2"
   launch_configuration = aws_launch_configuration.capstone-server.name
-  vpc_zone_identifier  = ["${aws_subnet.public_subnet1.id}", "${aws_subnet.private_subnet2.id}"]
+  vpc_zone_identifier  = ["${aws_subnet.private_subnet1.id}", "${aws_subnet.private_subnet2.id}"]
+
+  lifecycle {
+    create_before_destroy = true
+  }
 
   tag {
     key                 = "Name"

@@ -37,7 +37,7 @@ resource "aws_security_group" "project-security-group" {
 
 resource "aws_network_acl" "mainProject" {
   vpc_id     = aws_vpc.demoVPC.id
-  subnet_ids = [aws_subnet.public_subnet1.id, aws_subnet.private_subnet2.id, aws_subnet.private_subnet3.id]
+  subnet_ids = [aws_subnet.public_subnet1.id, aws_subnet.public_subnet2.id, aws_subnet.private_subnet1.id]
 
   egress {
     protocol   = "tcp"

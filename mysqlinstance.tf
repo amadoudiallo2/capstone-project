@@ -1,5 +1,5 @@
 resource "aws_db_subnet_group" "my_db_subnets" {
-  subnet_ids = [aws_subnet.private_subnet3.id, aws_subnet.private_subnet4.id]
+  subnet_ids = [aws_subnet.public_subnet1.id, aws_subnet.public_subnet2.id]
 }
 
 
